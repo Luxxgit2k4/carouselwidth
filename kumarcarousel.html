@@ -1,0 +1,136 @@
+<div class="kumar">
+    <!-- Jewellery -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/jewelerry.png" alt="Jewellery" />
+        <div class="image-text">Jewellery</div>
+    </div> 
+    <!-- E commerce -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/ecommerce.png" alt="E commerce" />
+        <div class="image-text">E commerce</div>
+    </div>
+    <!-- Automation -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/automative.png" alt="Automation" />
+        <div class="image-text">Automation</div>
+    </div>
+    <!-- Medicine -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/medical.png" alt="Medical & Healthcare" />
+        <div class="image-text">Medical & Healthcare</div>
+    </div>
+    <!-- sports -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/sports.png" alt="Sports" />
+        <div class="image-text">Sports</div>
+    </div>
+    <!-- travel -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/travel.png" alt="Travel" />
+        <div class="image-text">Travel</div>
+    </div>
+    <!-- real Estate -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/realEstate.png" alt="Real Estate" />
+        <div class="image-text">Real Estate</div>
+    </div>
+    <!-- food -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/food.png" alt="Food" />
+        <div class="image-text">Food</div>
+    </div>
+    <!-- restaurant -->
+    <div class="images">
+        <img src="https://mintcream-chamois-672285.hostingersite.com/wp-content/uploads/2024/09/restaurant.png" alt="Restaurant" />
+        <div class="image-text">Restaurant</div>
+    </div>
+</div>
+
+<style>
+
+.kumar {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    overflow: hidden;
+}
+
+
+.images {
+    position: relative;
+    width: calc(100% / 9 - 10px); /* images in single row */
+    transition: width 0.5s ease;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.images img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 15px; /* corners for images */
+    transition: width 0.5s ease;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* text background */
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Hover pannanum */
+.images:hover,
+.images:active {
+    width: calc(100% / 4 * 1.2); /* width left la increase */
+}
+
+.images:hover img,
+.images:active img {
+    width: 100%;
+}
+
+.images:hover .image-text,
+.images:active .image-text {
+    font-size: 20px; /* text size increase hover pannamodhu */
+}
+
+/* corner radius for background image */
+.images::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://www.colorhexa.com/d954ff.png);
+    background-size: cover;
+    border-radius: 15px;
+    opacity: 0.65; /* semi-transparent overlay */
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+ /* opacity kami when hovering */
+.images:hover::before {
+    opacity: 0; 
+}
+</style>
+
+<script>
+document.querySelectorAll('.clickable-image').forEach(function(image) {
+    image.addEventListener('click', function() {
+        // Reset width
+        document.querySelectorAll('.clickable-image').forEach(function(img) {
+            img.classList.remove('clicked');
+        });
+        this.classList.add('clicked');
+    });
+});
+</script>
